@@ -1,0 +1,24 @@
+{
+  "name": "roketproject",
+  "version": "1.0.0",
+  "description": "mobile rocket league",
+  "main": "server.js",
+  "type": "module",
+  
+
+  "scripts": {
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "rLeague1"
+  },
+  "author": "Axf",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "http": "^0.0.1-security",
+    "socket.io": "^4.8.0"
+  }
+}

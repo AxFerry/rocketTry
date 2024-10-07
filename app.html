@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket</title>
+
+</head>
+<script src="/socket.io/socket.io.js"></script>
+<body>
+    <h1>Rocket</h1>
+    <canvas id="canvas " width="650px" height="400px"></canvas>
+     <button id="breack"> stop </button>
+     <button id="boost"> N2o </button>
+    
+</body>
+</html>
+<style>
+    canvas{
+        border : 1px solid black;
+        display: block;
+        margin: 0;
+        background: green;
+    
+    }
+</style>
+<script>
+
+const socket = io("http://localhost:2000");
+const brkbtn = document.getElementById("breack");
+const btnboost =document.getElementById("boost");
+socket.emit('u2s', "Client Ready");
+
+brkbtn.addEventListener("click" , () => {
+    console.log("hello");
+    socket.emit("u2s" , "brecking")
+})
+btnboost.addEventListener("click" , () => {
+    socket.emit("u2u" , "booooost");
+})
+
+socket.on("u2u" , data =>{
+    allert(data);
+
+})
+
+
+</script>
